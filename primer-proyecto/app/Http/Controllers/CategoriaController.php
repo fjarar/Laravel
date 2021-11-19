@@ -23,6 +23,15 @@ class CategoriaController extends Controller
 
     public function editar(Request $request){
         $id=$request->id;
-        $categoria=Categoria::where('categorias.id',$id);
+        $categoria=Categoria::where('categorias.id',$id)->get();
+        return view('categoriaeditar',['categoria'=>$categoria]);
+    }
+
+    public function actualizar(Request $request){
+        $categoria=Categoria::findOrFail($request->id);
+        $categoria->nombre=$request->nombre;
+        $categoria->descripcion=$request->descripcion;
+        $categoria->save();
+        return redirect('/categorianueva');
     }
 }
