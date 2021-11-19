@@ -18,4 +18,29 @@
         </form>
     </div>
 </div>
+<br><br>
+<h2>Listado Categorias</h2>
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($categorias as $categoria)
+            <tr>
+                <td>{{$categoria->nombre}}</td>
+                <td>{{$categoria->descripcion}}</td>
+                <td>
+                    <a href="/categoriaeditar/{{$categoria->id}}" class="btn btn-success">Editar</a>
+                    <a href="/categoriaeliminar/{{$categoria->id}}" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
 @stop
