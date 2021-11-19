@@ -20,4 +20,9 @@ class CategoriaController extends Controller
         $categoria->save();
         return redirect('/categorianueva');
     }
+
+    public function editar(Request $request){
+        $id=$request->id;
+        $categoria=Categoria::where('categorias.id',$id);
+    }
 }
