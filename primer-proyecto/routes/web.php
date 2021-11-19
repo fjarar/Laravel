@@ -20,4 +20,5 @@ Route::get('/', function () {
 });
 Route::get('/categorianueva',[CategoriaController::class,'nueva']);
 Route::post('/categoriacrear',[CategoriaController::class,'crear']);
+Route::get('/categoriaeditar/{id}',[CategoriaController::class,'editar']);
 
