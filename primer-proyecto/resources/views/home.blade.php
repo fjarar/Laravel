@@ -68,9 +68,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/productonuevo">
               <span data-feather="shopping-cart"></span>
-              Products
+              Productos
             </a>
           </li>
           <li class="nav-item">
