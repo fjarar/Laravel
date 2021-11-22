@@ -34,4 +34,9 @@ class CategoriaController extends Controller
         $categoria->save();
         return redirect('/categorianueva');
     }
+
+    public function eliminar(Request $request){
+        Categoria::where('categorias.id',$request->id)->delete();
+        return redirect('/categorianueva');
+    }
 }
