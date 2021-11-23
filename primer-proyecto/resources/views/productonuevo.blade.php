@@ -7,24 +7,24 @@
         <form action="/categoriacrear" method="post">
             @csrf
             <div class="input-group mb-3">
-                <input type="text" name="codigo" class="form-control" placeholder="Código" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <input type="text" name="codigo" class="form-control" placeholder="Código" aria-label="Recipient's username" aria-describedby="basic-addon2" require>
                 <span class="input-group-text" id="basic-addon2">Código Producto</span>
             </div>
             <div class="input-group mb-3">
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre" aria-label="Recipient's username" aria-describedby="basic-addon2" require>
                 <span class="input-group-text" id="basic-addon2">Nombre Producto</span>
             </div>
             <div class="input-group mb-3">
-                <input type="text" name="descripcion" class="form-control" placeholder="Descripcion del Producto" aria-label="Descripcion de la Categoria" aria-describedby="basic-addon2">
+                <input type="text" name="descripcion" class="form-control" placeholder="Descripcion del Producto" aria-label="Descripcion de la Categoria" aria-describedby="basic-addon2" require>
                 <span class="input-group-text" id="basic-addon2">Descripcion del Producto</span>
             </div>
             <div class="input-group mb-3">
-                <select name="categoria" id="categoria_container" class="form-control">
+                <select name="categoria" id="categoria_container" class="form-control" require>
                     <option selected="selected" class="input-group-text">Eliga una categoría</option>
                     @foreach($categorias as $categoria)
                     <option value="{{$categoria->id}}" class="input-group-text">{{$categoria->nombre}}</option>
-                    
-                    @endforeach                    
+
+                    @endforeach
                 </select>
                 <span class="input-group-text" id="basic-addon2">Categoria Producto</span>
             </div>
@@ -45,7 +45,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr></tr>
+            @foreach($productos as $producto)
+            <tr>
+                <td>{{$producto->codigo}}</td>
+                <td>{{$producto->nombre}}</td>
+                <td>{{$producto->descripcion}}</td>
+                <td>{{$producto->categoria}}</td>
+                <td>
+                    <a href="/categoriaeditar/{{$categoria->id}}" class="btn btn-success">Editar</a>
+                    <a href="/categoriaeliminar/{{$categoria->id}}" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

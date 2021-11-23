@@ -4,7 +4,7 @@
 <div class="card">
     <div class="card-header">Categorías</div>
     <div class="card-body">
-        <form action="/categoriacrear" method="post">
+        <form action="/productocrear" method="post">
             @csrf
             <div class="input-group mb-3">
                 <input type="text" name="nombre" class="form-control" placeholder="Nombre" aria-label="Recipient's username" aria-describedby="basic-addon2">

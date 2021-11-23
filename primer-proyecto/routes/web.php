@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProductoController;
+use App\Models\Producto;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,4 @@ Route::post('/categoriaactualizar',[CategoriaController::class, 'actualizar']);
 Route::get('/categoriaeliminar/{id}',[CategoriaController::class,'eliminar']);
 Route::get('/productonuevo',[ProductoController::class, 'nuevo']);
 Route::get('/productonuevo',[ProductoController::class, 'lista_categorias']);
+Route::get('/productocrear',[ProductoController::class, 'crear']);

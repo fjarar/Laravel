@@ -19,4 +19,14 @@ class ProductoController extends Controller
 
         return view('productonuevo',['categorias'=>$categorias]);
     }
+
+    public function crear(Request $request){
+        $producto=new Producto();
+        $producto->codigo=$request->codigo;
+        $producto->nombre=$request->nombre;
+        $producto->descripcion=$request->descripcion;
+        $producto->categoria=$request->categoria;
+        $producto->save();
+        return redirect('/productonuevo');
+    }
 }
