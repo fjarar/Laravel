@@ -24,3 +24,4 @@ Route::get('/categoriaeditar/{id}',[CategoriaController::class,'editar']);
 Route::post('/categoriaactualizar',[CategoriaController::class, 'actualizar']);
 Route::get('/categoriaeliminar/{id}',[CategoriaController::class,'eliminar']);
 Route::get('/productonuevo',[ProductoController::class, 'nuevo']);
+Route::get('/productonuevo',[ProductoController::class, 'lista_categorias']);

@@ -19,7 +19,13 @@
                 <span class="input-group-text" id="basic-addon2">Descripcion del Producto</span>
             </div>
             <div class="input-group mb-3">
-                <input type="text" name="categoria" class="form-control" placeholder="Categoria" aria-label="Descripcion de la Categoria" aria-describedby="basic-addon2">
+                <select name="categoria" id="categoria_container" class="form-control">
+                    <option selected="selected" class="input-group-text">Eliga una categoría</option>
+                    @foreach($categorias as $categoria)
+                    <option value="{{$categoria->id}}" class="input-group-text">{{$categoria->nombre}}</option>
+                    
+                    @endforeach                    
+                </select>
                 <span class="input-group-text" id="basic-addon2">Categoria Producto</span>
             </div>
             <input class="btn btn-primary" type="submit" value="crear">
