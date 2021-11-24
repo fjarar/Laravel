@@ -23,7 +23,6 @@
                     <option selected="selected" class="input-group-text">Eliga una categoría</option>
                     @foreach($categorias as $categoria)
                     <option value="{{$categoria->id}}" class="input-group-text">{{$categoria->nombre}}</option>
-
                     @endforeach
                 </select>
                 <span class="input-group-text" id="basic-addon2">Categoria Producto</span>
@@ -41,7 +40,6 @@
                 <th scope="col">Código</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Descripción</th>
-                <th scope="col">Categorias</th>
             </tr>
         </thead>
         <tbody>
@@ -50,13 +48,13 @@
                 <td>{{$producto->codigo}}</td>
                 <td>{{$producto->nombre}}</td>
                 <td>{{$producto->descripcion}}</td>
-                <td>{{$producto->categoria}}</td>
-                <td>
-                    <a href="/categoriaeditar/{{$categoria->id}}" class="btn btn-success">Editar</a>
-                    <a href="/categoriaeliminar/{{$categoria->id}}" class="btn btn-danger">Eliminar</a>
-                </td>
             </tr>
             @endforeach
+            <td>
+                <!-- <a href="/productoeditar/producto->id" class="btn btn-success">Editar</a>
+                    <a href="/productoeliminar/producto->id" class="btn btn-danger">Eliminar</a> -->
+            </td>
+            </tr>
         </tbody>
     </table>
 </div>
