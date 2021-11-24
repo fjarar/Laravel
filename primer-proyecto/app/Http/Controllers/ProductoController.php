@@ -24,4 +24,10 @@ class ProductoController extends Controller
         $producto->save();
         return redirect('/productonuevo');
     }
+
+    public function editar(Request $request){
+        $id=$request->id;
+        $producto=Producto::where('productos.id',$id)->get();
+        return view('productoeditar',['producto'=>$producto]);
+    }
 }
