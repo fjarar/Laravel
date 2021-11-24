@@ -15,12 +15,6 @@ class ProductoController extends Controller
         return view('productonuevo',['productos'=>$productos, 'categorias'=>$categorias]);
     }
 
-    /* public function lista_categorias(){
-        $categorias=Categoria::get();
-
-        return view('productonuevo',['categorias'=>$categorias]);
-    } */
-
     public function crear(Request $request){
         $producto=new Producto();
         $producto->codigo=$request->codigo;
