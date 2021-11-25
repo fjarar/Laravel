@@ -30,4 +30,13 @@ class ProductoController extends Controller
         $producto=Producto::where('productos.id',$id)->get();
         return view('productoeditar',['producto'=>$producto]);
     }
+
+    public function actualizar(Request $request){
+        $producto=producto::findOrFail($request->id);
+        $producto->nombre=$request->nombre;
+        $producto->descripcion=$request->descripcion;
+        $producto->idcategoria=$request->categoria;
+        $producto->save();
+        return redirect('/productonuevo');
+    }
 }

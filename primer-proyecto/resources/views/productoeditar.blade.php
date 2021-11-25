@@ -4,7 +4,7 @@
 <div class="card">
     <div class="card-header">Productos</div>
     <div class="card-body">
-        <form action="/productocrear" method="post">
+        <form action="/productoactualizar" method="post">
             @csrf
             <div class="input-group mb-3">
                 <input type="text" name="codigo" class="form-control" placeholder="Código" aria-label="Recipient's username" aria-describedby="basic-addon2" require>
