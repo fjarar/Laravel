@@ -33,7 +33,8 @@ class ProductoController extends Controller
     }
 
     public function actualizar(Request $request){
-        $producto=producto::findOrFail($request->id);
+        $producto=Producto::findOrFail($request->id);
+        $producto->codigo=$request->codigo;
         $producto->nombre=$request->nombre;
         $producto->descripcion=$request->descripcion;
         $producto->idcategoria=$request->categoria;

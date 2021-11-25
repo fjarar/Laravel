@@ -49,8 +49,8 @@
                 <td>{{$producto->nombre}}</td>
                 <td>{{$producto->descripcion}}</td>
                 <td>
-                    <a href="/productoeditar/producto->id" class="btn btn-success">Editar</a>
-                    <a href="/productoeliminar/producto->id" class="btn btn-danger">Eliminar</a>
+                    <a href="/productoeditar/{{$producto->id}}" class="btn btn-success">Editar</a>
+                    <a href="/productoeliminar/{{$producto->id}}" class="btn btn-danger">Eliminar</a>
                 </td>
             </tr>
             @endforeach
