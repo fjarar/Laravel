@@ -41,4 +41,9 @@ class ProductoController extends Controller
         $producto->save();
         return redirect('/productonuevo');
     }
+
+    public function eliminar(Request $request){
+        Producto::where('productos.id',$request->id)->delete();
+        return redirect('/productonuevo');
+    }
 }
