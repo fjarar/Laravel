@@ -28,7 +28,8 @@ class ProductoController extends Controller
     public function editar(Request $request){
         $id=$request->id;
         $producto=Producto::where('productos.id',$id)->get();
-        return view('productoeditar',['producto'=>$producto]);
+        $categorias=Categoria::get();
+        return view('productoeditar',['producto'=>$producto, 'categorias'=>$categorias]);
     }
 
     public function actualizar(Request $request){
