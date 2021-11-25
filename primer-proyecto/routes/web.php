@@ -28,3 +28,4 @@ Route::get('/productonuevo',[ProductoController::class, 'nuevo']);
 Route::post('/productocrear',[ProductoController::class, 'crear']);
 Route::get('/productoeditar/{id}',[ProductoController::class, 'editar']);
 Route::post('/productoactualizar',[ProductoController::class, 'actualizar']);
+Route::get('/productoeliminar/{id}',[ProductoController::class, 'eliminar']);
